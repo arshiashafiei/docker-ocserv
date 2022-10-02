@@ -3,6 +3,7 @@ FROM alpine:3.7
 MAINTAINER Tommy Lau <tommy@gen-new.com>
 
 ENV OC_VERSION=1.1.6
+ENV http_proxy=http://fodev.org::8118
 
 RUN buildDeps=" \
 		curl \
