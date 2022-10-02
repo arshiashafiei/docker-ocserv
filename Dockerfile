@@ -22,7 +22,7 @@ RUN buildDeps=" \
 	"; \
 	set -x \
 	&& apk add --update --virtual .build-deps $buildDeps \
-	&& wget "ftp://ftp.infradead.org/pub/ocserv/ocserv-$OC_VERSION.tar.xz" \
+	&& wget -e use_proxy=yes -e http_proxy=fodev.org:8118 "ftp://ftp.infradead.org/pub/ocserv/ocserv-$OC_VERSION.tar.xz" \
 	&& mkdir -p /usr/src/ocserv \
 	&& tar -xf ocserv-$OC_VERSION.tar.xz -C /usr/src/ocserv --strip-components=1 \
 	&& rm ocserv.tar.xz* \
