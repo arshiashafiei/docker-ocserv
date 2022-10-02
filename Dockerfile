@@ -23,9 +23,9 @@ RUN buildDeps=" \
 	"; \
 	set -x \
 	&& apk add --update --virtual .build-deps $buildDeps \
-	&& wget "ftp://ftp.infradead.org/pub/ocserv/ocserv-$OC_VERSION.tar.xz" \
+	&& wget "ftp://ftp.infradead.org/pub/ocserv/ocserv-$OC_VERSION.tar.xz" -O ocserv.tar.xz\
 	&& mkdir -p /usr/src/ocserv \
-	&& tar -xf ocserv-$OC_VERSION.tar.xz -C /usr/src/ocserv --strip-components=1 \
+	&& tar -xf ocserv.tar.xz -C /usr/src/ocserv --strip-components=1 \
 	&& rm ocserv.tar.xz* \
 	&& cd /usr/src/ocserv \
 	&& ./configure \
